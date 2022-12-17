@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivaran</title>
+    <link rel="icon" href="https://i.postimg.cc/8C0qMggW/logo.png" type="image/png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <style>
+        
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::selection{
+  background: rgb(0,123,255,0.3);
+}
+.content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0px 30px;
+}
+.navbar{
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+}
+.navbar.sticky{
+  padding: 10px 0;
+  background: #1b1b1b;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+.navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar .menu-list{
+  display: inline-flex;
+}
+.menu-list li{
+  list-style: none;
+}
+.menu-list li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.menu-list li a:hover{
+  color: #007bff;
+}
+.banner{
+  background: url("https://i.postimg.cc/pdgKx3MX/page3.png") no-repeat;  
+        height: 1500px;
+        
+        background-size: contain;
+        background-position: center;
+}
+.about{
+  padding: 40px 0;
+}
+.about .title{
+  font-size: 35px;
+  font-weight: 700;
+}
+.about p{
+  padding-top: 20px;
+  text-align: justify;
+}
+.icon{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.icon.cancel-btn{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+.navbar.sticky .icon.cancel-btn{
+  top: 10px;
+}
+@media (max-width: 868px) {
+  body.disabledScroll{
+    overflow: hidden;
+  }
+  .icon{
+    display: block;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    z-index: 9;
+  }
+  .icon.cancel-btn{
+    display: none;
+  }
+  .icon.cancel-btn.show{
+    display: block;
+  }
+  .icon.hide{
+    display: none;
+  }
+  .navbar .menu-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #222;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
+    transition: all 0.3s ease;
+  }
+  .navbar.sticky .menu-list{
+    clip-path: circle(25px at calc(100% - 55px) calc(0% + 35px));
+  }
+  .navbar .menu-list.active{
+    clip-path: circle(75%);
+  }
+  .navbar .menu-list li{
+    margin-top: 45px;
+  }
+  .navbar .menu-list li a{
+    font-size: 23px;
+  }
+}
+
+
+.dropdown {
+        float: left;
+        overflow: hidden;
+        margin-top: -15px;
+        
+      }
+      .dropdown .dropbtn {
+        font-size: 20px;
+        font-weight: 800;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin:0;
+        margin-top: 5px;
+      }
+      
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #3460db;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      /* Links inside the dropdown */
+      .dropdown-content a {
+        float: none;
+        color: rgb(212, 192, 192);
+         padding: 12px 16px; 
+        text-decoration: none;
+         display: block; 
+        text-align: left;
+      }
+      
+     
+      .dropdown-content a:hover {
+        background-color: rgb(4, 8, 20);
+      }
+      
+      /* Show the dropdown menu on hover */
+      .dropdown:hover .dropdown-content {
+         display: block; 
+      }
+
+.classes
+{
+ padding: 100px;
+  display: flex;
+}
+.classes>.nine
+{
+  background-color: black;
+  border: 5px hsla(207, 100%, 46%, 0.912) solid ;
+  box-shadow: 0 5px 50px rgb(5, 62, 246) inset ,0 5px 50px 0 floralwhite;
+             /* 0 5px 50px #f1f1f1 inset ,0 5px 50px 0 floralwhite; */
+  width: 50%;
+  height: 30%;
+  border-radius: 5px;
+  padding: 50px;
+  border: 10px solid white(78, 63, 63);
+  margin: 200px;
+  margin-left: -50px;
+  font-size: 70px;
+  color: hsla(207, 100%, 46%, 0.912);
+  
+}
+ 
+  .nine:hover{
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0099e6, 0 0 40px #0099e6, 0 0 50px #0099e6, 0 0 60px #0099e6, 0 0 70px #0099e6;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #0099e6, 0 0 40px #0099e6, 0 0 50px #0099e6, 0 0 60px #0099e6, 0 0 70px #0099e6, 0 0 80px #0099e6;
+  }
+  
+    
+  
+ 
+   
+ 
+
+.classes>.ten
+{
+  background-color: black;
+  border: 5px hsla(207, 100%, 46%, 0.912) solid ;
+  box-shadow: 0 5px 50px rgb(5, 62, 246) inset ,0 5px 50px 0 floralwhite;
+             /* 0 5px 50px #f1f1f1 inset ,0 5px 50px 0 floralwhite; */
+  width: 50%;
+  height: 30%;
+  border-radius: 5px;
+  padding: 50px;
+  border: 10px solid white(78, 63, 63);
+  margin: 10px;
+  font-size: 70px;
+  color: hsla(207, 100%, 46%, 0.912);
+  
+
+}
+.ten:hover{
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0099e6, 0 0 40px #0099e6, 0 0 50px #0099e6, 0 0 60px #0099e6, 0 0 70px #0099e6;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #0099e6, 0 0 40px #0099e6, 0 0 50px #0099e6, 0 0 60px #0099e6, 0 0 70px #0099e6, 0 0 80px #0099e6;
+  }
+.classes1{
+  margin-top: -200px;
+  display: flex;
+  margin-left: -300px;
+}
+.classes1>.ele{
+  background-color: black;
+  border: 5px hsla(207, 100%, 46%, 0.912) solid ;
+  box-shadow: 0 5px 50px rgb(5, 62, 246) inset ,0 5px 50px 0 floralwhite;
+             /* 0 5px 50px #f1f1f1 inset ,0 5px 50px 0 floralwhite; */
+  width: 30%;
+  height: 30%;
+  border-radius: 5px;
+  padding: 50px;
+  border: 10px solid white(78, 63, 63);
+  margin: 200px;
+  margin-left: 400px;
+  font-size: 70px;
+  color: hsla(207, 100%, 46%, 0.912);
+  
+
+}
+.ele:hover{
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0099e6, 0 0 40px #0099e6, 0 0 50px #0099e6, 0 0 60px #0099e6, 0 0 70px #0099e6;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #0099e6, 0 0 40px #0099e6, 0 0 50px #0099e6, 0 0 60px #0099e6, 0 0 70px #0099e6, 0 0 80px #0099e6;
+  }
+.classes1>.twe{
+  
+  background-color: black;
+  border: 5px hsla(207, 100%, 46%, 0.912) solid ;
+  box-shadow: 0 5px 50px rgb(5, 62, 246) inset ,0 5px 50px 0 floralwhite;
+             /* 0 5px 50px #f1f1f1 inset ,0 5px 50px 0 floralwhite; */
+  width: 30%;
+  height: 30%;
+  border-radius: 5px;
+  padding: 50px;
+  border: 10px solid white(78, 63, 63);
+  margin: 10px;
+  font-size: 70px;
+  color: hsla(207, 100%, 46%, 0.912);
+}
+.twe:hover{
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0099e6, 0 0 40px #0099e6, 0 0 50px #0099e6, 0 0 60px #0099e6, 0 0 70px #0099e6;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #0099e6, 0 0 40px #0099e6, 0 0 50px #0099e6, 0 0 60px #0099e6, 0 0 70px #0099e6, 0 0 80px #0099e6;
+  }
+.title{
+  border: 5px solid white;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 2px;
+  background-color:black;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 50px #f1f1f1 inset ,0 5px 50px 0 floralwhite;
+  box-shadow: 0 5px 50px #f1f1f1 inset ,0 5px 50px 0 floralwhite;
+}
+ul li{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
+  text-decoration: none;
+  /* color: white; */
+  list-style-type: style inside;
+  
+}
+ul li:hover{
+  color: red;
+  cursor: pointer;
+}
+.about{
+  background-color: black;
+}
+.logo a:hover{
+  color: #ff9900;
+}
+
+ /* -----------------------------------------about------------------------- */
+      
+ .About
+      {
+        padding: 40px;
+        background-color: #000;
+        color: #f1f1f1;
+        margin-top: 20px;
+      }
+      
+      
+      
+      
+      
+      /* ----------------------------------footer--------------------- */
+      
+      .site-footer
+      {
+        background-color:#26272b;
+        padding:45px 0 20px;
+        font-size:15px;
+        line-height:24px;
+        color:#737373;
+      }
+      .site-footer hr
+      {
+        border-top-color:#bbb;
+        opacity:0.5
+      }
+      .site-footer hr.small
+      {
+        margin:20px 0
+      }
+      .site-footer h6
+      {
+        color:#fff;
+        font-size:16px;
+        text-transform:uppercase;
+        margin-top:5px;
+        letter-spacing:2px
+      }
+      .site-footer a
+      {
+        color:#737373;
+      }
+      .site-footer a:hover
+      {
+        color:#3366cc;
+        text-decoration:none;
+      }
+      .footer-links
+      {
+        padding-left:0;
+        list-style:none;
+        font: size 20px;
+      }
+      .footer-links li
+      {
+        display:block
+      }
+      .footer-links a
+      {
+        color:#737373
+      }
+      .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+      {
+        color:#3366cc;
+        text-decoration:none;
+      }
+      .footer-links.inline li
+      {
+        display:inline-block
+      }
+      .site-footer .social-icons
+      {
+        text-align:right
+      }
+      .site-footer .social-icons a
+      {
+        width:40px;
+        height:40px;
+        line-height:40px;
+        margin-left:6px;
+        margin-right:0;
+        border-radius:100%;
+        background-color:#33353d
+      }
+      .copyright-text
+      {
+        margin:0
+      }
+      @media (max-width:991px)
+      {
+        .site-footer [class^=col-]
+        {
+          margin-bottom:30px
+        }
+      }
+      @media (max-width:767px)
+      {
+        .site-footer
+        {
+          padding-bottom:0
+        }
+        .site-footer .copyright-text,.site-footer .social-icons
+        {
+          text-align:center
+        }
+      }
+      .social-icons
+      {
+        padding-left:0;
+        margin-bottom:0;
+        list-style:none
+      }
+      .social-icons li
+      {
+        display:inline-block;
+        margin-bottom:4px
+      }
+      .social-icons li.title
+      {
+        margin-right:15px;
+        text-transform:uppercase;
+        color:#96a2b2;
+        font-weight:700;
+        font-size:13px
+      }
+      .social-icons a{
+        background-color:#eceeef;
+        color:#818a91;
+        font-size:16px;
+        display:inline-block;
+        line-height:44px;
+        width:44px;
+        height:44px;
+        text-align:center;
+        margin-right:8px;
+        border-radius:100%;
+        -webkit-transition:all .2s linear;
+        -o-transition:all .2s linear;
+        transition:all .2s linear
+      }
+      .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+      {
+        color:#fff;
+        background-color:#29aafe
+      }
+      .social-icons.size-sm a
+      {
+        line-height:34px;
+        height:34px;
+        width:34px;
+        font-size:14px
+      }
+      .social-icons a.facebook:hover
+      {
+        background-color:#3b5998
+      }
+      .social-icons a.twitter:hover
+      {
+        background-color:#00aced
+      }
+      .social-icons a.linkedin:hover
+      {
+        background-color:#007bb6
+      }
+      .social-icons a.dribbble:hover
+      {
+        background-color:#ea4c89
+      }
+      @media (max-width:767px)
+      {
+        .social-icons li.title
+        {
+          display:block;
+          margin-right:0;
+          font-weight:600
+        }
+      }
+
+
+      
+      
+    </style>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo"><a href="#">NIVARAN</a></div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        
+
+
+      <li>
+        <li><a href="/">Home</a></li>
+        <li><a href="web">Back</a></li>
+        <li><a href="Chat">Chat</a></li>
+        <li><a href="#About">About Us</a></li>
+
+        <div class="dropdown">
+          <ul>
+          <li><button class="dropbtn">Install
+            <i class="fa fa-caret-down"></i>
+          </button> 
+          <div class="dropdown-content">
+            <a href="webd">Web-d</a>
+            <a href="appd">App-d</a>
+            
+          </div>
+          </li>
+          </ul>
+        </div>
+         <li><div class="gcse-searchbox-only"><script async src="https://cse.google.com/cse.js?cx=49e78e0b99c4749e4"></script></div></li>
+        
+      </ul>
+
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="banner"></div>
+  <div class="about">
+    <div class="content">
+     <center><h1> <div class="title">Applications</div></h1></center>
+     <div class="classes">
+       
+      <div class="nine" >
+       <a href="content"><center style="font-family: cookies;">Flutter</center></a>
+      
+      </div>
+
+
+      <div class="ten" >
+       <a href="Class12"><center style="font-family: cookies;">VS code</center></a>
+      
+      </div>
+
+
+      </div>
+        
+     
+   
+    </div>
+    <div class="classes1">
+      <div class="ele">
+        <a href="kotlin"><center style="font-family: cookies;">Kotlin</center></a>
+        
+      </div>
+      <div class="twe">
+        <a href="doccer"><center style="font-family: cookies;">Docker</center>
+        
+      </div>
+    </div>
+  </div>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="About" id="About">
+    <h2 class="ah">About Us</h2>
+     <p class="au">
+      We have all encountered  problems when installing new  software, which is a common  occurrence in the life of a  programmer. No matter how  insignificant it may appear,  installing an application correctly  is the first step toward creating  something enormous and  productive, but a small error can  derail your success!!!
+      Using this issue as inspiration,  we devised a plan to assist  others in dealing with similar  issues without causing them  stress, wasted time, or strain.  We will strive to provide the  finest content possible to assist  our users in every way.
+      
+     </p>
+  </div>
+  <div style="margin-top: 10px;">
+     <!-- Site footer -->
+     <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+       
+<div>
+
+          <div class="col-xs-6 col-md-3" style="margin-left: 50px; margin-bottom: 100px;">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="#">VS Code</a></li>
+              <li><a href="#">Flutter</a></li>
+              <li><a href="#">Unix</a></li>
+              <li><a href="#">Kotlin</a></li>
+             
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3" style="margin-top: -220px; margin-left: 300px; margin-bottom: 30px; ">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#About">About Us</a></li>
+              <li><a href="#link">Contact Us</a></li>
+              <li><a href="#">Contribute</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+
+              
+            </ul>
+          </div>
+        </div>
+ </div>       
+</div>
+<hr>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12" style="margin-left: 20px;">
+            <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+         <a href="#">Nivaran</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fab fa-facebook-f" ></i></a></li>
+              <li><a class="twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
+  </div>
+
+<!-----------------------------------------------------------javascript--------------------------------------------------------------------------->
+
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector(".menu-list");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      menu.classList.add("active");
+      menuBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+      body.classList.add("disabledScroll");
+    }
+    cancelBtn.onclick = ()=>{
+      menu.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      body.classList.remove("disabledScroll");
+    }
+
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+</body>
+</html>
+
+
+<!-------------------------------------------------------------rough code------------------------------------------------------------->
+

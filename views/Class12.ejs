@@ -1,0 +1,256 @@
+<%- include("./partials/header") %>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::selection{
+  background: rgb(0,123,255,0.3);
+}
+.content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0px 30px;
+}
+.navbar{
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  padding: 25px 0;
+  transition: all 0.3s ease;
+}
+.navbar.sticky{
+  padding: 10px 0;
+  background: #1b1b1b;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+.navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar .menu-list{
+  display: inline-flex;
+}
+.menu-list li{
+  list-style: none;
+}
+.menu-list li a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.menu-list li a:hover{
+  color: #007bff;
+}
+ .banner{
+  height: 100vh;
+  /* background: url("https://i.postimg.cc/pdgKx3MX/page3.png") no-repeat; */
+  background: url("https://binfree.ru/wp-content/uploads/2022/02/tekstovyy-redaktor-koda-870x400.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+} 
+.about{
+  padding: 40px 0;
+}
+.about .title{
+  font-size: 35px;
+  font-weight: 700;
+}
+.about p{
+  padding-top: 20px;
+  text-align: justify;
+}
+.icon{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.icon.cancel-btn{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+.navbar.sticky .icon.cancel-btn{
+  top: 10px;
+}
+@media (max-width: 868px) {
+  body.disabledScroll{
+    overflow: hidden;
+  }
+  .icon{
+    display: block;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    z-index: 9;
+  }
+  .icon.cancel-btn{
+    display: none;
+  }
+  .icon.cancel-btn.show{
+    display: block;
+  }
+  .icon.hide{
+    display: none;
+  }
+  .navbar .menu-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #222;
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
+    transition: all 0.3s ease;
+  }
+  .navbar.sticky .menu-list{
+    clip-path: circle(25px at calc(100% - 55px) calc(0% + 35px));
+  }
+  .navbar .menu-list.active{
+    clip-path: circle(75%);
+  }
+  .navbar .menu-list li{
+    margin-top: 45px;
+  }
+  .navbar .menu-list li a{
+    font-size: 23px;
+  }
+}
+
+.about{
+  background-color: black;
+}
+.logo a:hover{
+  color: #ff9900;
+}
+.heading{
+  background-color: rgb(77, 76, 76);
+}
+.vsCode{
+  background-color: #222;
+  border: #888;
+  color: #f1f1f1;
+  padding: 50px;
+  text-align: center;
+}
+    </style>
+    <nav class="navbar">
+      <div class="content">
+        <div class="logo"><a href="#">NIVARAN</a></div>
+        <ul class="menu-list">
+          <div class="icon cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+          <li><a href="/">Home</a></li>
+          <li><a href="web">Back</a></li>
+          <li><a href="Chat">Chat</a></li>
+           <!-- <li><a href="./content">class 9-10</a></li> -->
+          
+        </ul>
+        <div class="icon menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+    <div class="banner"></div>
+  <div class="heading"><center><h1>VS Code</h1></center></div>
+   
+    <div class="vsCode">
+    <p>
+      <b>Step 1: </b>> Firstly we’ll download the latest available version of Visual Studio Code. Follow the below-provided download link and you’ll be <br>
+      redirected to the official visual studio code downloads page. There click on the “Download for Windows” button and your download will start.</p><br>
+      <img src="https://i.postimg.cc/tgWXpNJH/STEP1.png" style="height: 40%; width: 40%;"><br>
+      <p> <b>Step 2: </b> Once the download gets finished open the downloaded vs code file in the folder where it has been downloaded. Double click on the<br>
+       downloaded vs code file to start the installation window.</p><br>
+       <img src="https://i.postimg.cc/L4CMdbD1/Step2.png"style="height: 40%; width: 40%;"><br>
+       <p><b>Step 3: </b> Now you’ll be asked to accept the license agreement in the installation window. Simply check the “I accept the agreement” button <br>
+       and click on next.</p><br>
+       <img src="https://i.postimg.cc/K8tVYqPQ/STEP3.png"style="height: 40%; width: 40%;"><br>
+       <p><b>Step 4:</b>  You’ll be asked to select the installation folder for Visual Studio Code. Here we will go with the default installation location<br>
+        so simply click next.</p><br>
+       <p>Make sure to have at least 260Mb of free space available for visual studio code installation.</p><br>
+      
+       <img src="https://i.postimg.cc/DwQjhWhM/STEP4.png"style="height: 40%; width: 40%;"><br>
+       <p><b>Step 5:</b>  A select start menu window will show up and here as well we don’t need to change anything therefore simply click next.</p><br>
+
+       <img src="https://i.postimg.cc/Kcky25Hp/STEP5.png"style="height: 40%; width: 40%;"><br>
+      <p> <b>Step 6:</b>  In the select additional tasks window check the “create a desktop icon” & “add to path” checkboxes and click next.</p><br>
+
+      <img src="https://i.postimg.cc/CLT9VpDd/STEP6.png"style="height: 40%; width: 40%;"><br>
+      <p> <b>Step 7:</b> Now in this ready to install window click on next to start the installation process of Visual Studio Code in your windows machine.</p><br>
+
+       <p>This installation may take some time so have patience.</p><br>
+       
+        <img src="https://i.postimg.cc/h4x3sZwn/STEP7.png"style="height: 40%; width: 40%;"><br>
+       <p> <b>Step 8:</b>  Once the installation gets completed click on the finish button and after that Visual Studio Code will start automatically.</p><br>
+
+       <p> We would recommend you to restart your desktop after installation of vs code as it will help to add the path in the environment variable.</p><br>
+
+       <img src="https://i.postimg.cc/Jz761rh7/STEP8.png"style="height: 40%; width: 40%;"><br>
+
+        <b>You’ve successfully installed Visual Studio Code on your Windows 10 machine. 😎😎<br></b>
+        <h1>VIDEO</h1>
+        <iframe width="660" height="415" src="https://www.youtube.com/embed/MlIzFUI1QGA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   
+    </div>
+           
+  <!-- ------------------------------------------------------------JAVA Script------------------------------------------------------------ -->
+    
+        <script>
+          const body = document.querySelector("body");
+          const navbar = document.querySelector(".navbar");
+          const menu = document.querySelector(".menu-list");
+          const menuBtn = document.querySelector(".menu-btn")
+          const cancelBtn = document.querySelector(".cancel-btn");
+          menuBtn.onclick = ()=>{
+            menu.classList.add("active");
+            menuBtn.classList.add("hide");
+            cancelBtn.classList.add("show");
+            body.classList.add("disabledScroll");
+          }
+          cancelBtn.onclick = ()=>{
+            menu.classList.remove("active");
+            menuBtn.classList.remove("hide");
+            cancelBtn.classList.remove("show");
+            body.classList.remove("disabledScroll");
+          }
+      
+          window.onscroll = ()=>{
+            this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+          }
+        </script>
+      </body>
+
+

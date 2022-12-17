@@ -1,0 +1,365 @@
+<%- include("./partials/header") %>
+
+<body>
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+/* custom scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::selection{
+background: rgb(0,123,255,0.3);
+}
+.content{
+max-width: 1250px;
+margin: auto;
+padding: 0px 30px;
+}
+.navbar{
+position: fixed;
+z-index: 5;
+width: 100%;
+padding: 25px 0;
+transition: all 0.3s ease;
+}
+.navbar.sticky{
+padding: 10px 0;
+background: #1b1b1b;
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
+}
+.navbar .content{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.navbar .logo a{
+color: #fff;
+font-size: 30px;
+font-weight: 600;
+text-decoration: none;
+}
+.navbar .menu-list{
+display: inline-flex;
+}
+.menu-list li{
+list-style: none;
+}
+.menu-list li a{
+color: #fff;
+font-size: 18px;
+font-weight: 500;
+margin-left: 25px;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+.menu-list li a:hover{
+color: #007bff;
+}
+.banner{
+height: 100vh;
+/* background: url("https://i.postimg.cc/pdgKx3MX/page3.png") no-repeat; */
+background: url("https://www.mindinventory.com/blog/wp-content/uploads/2022/05/flutter-3.png") no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+} 
+.about{
+padding: 40px 0;
+}
+.about .title{
+font-size: 35px;
+font-weight: 700;
+}
+.about p{
+padding-top: 20px;
+text-align: justify;
+}
+.icon{
+color: #fff;
+font-size: 20px;
+cursor: pointer;
+display: none;
+}
+.icon.cancel-btn{
+position: absolute;
+right: 30px;
+top: 20px;
+}
+.navbar.sticky .icon.cancel-btn{
+top: 10px;
+}
+@media (max-width: 868px) {
+body.disabledScroll{
+  overflow: hidden;
+}
+.icon{
+  display: block;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  z-index: 9;
+}
+.icon.cancel-btn{
+  display: none;
+}
+.icon.cancel-btn.show{
+  display: block;
+}
+.icon.hide{
+  display: none;
+}
+.navbar .menu-list{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #222;
+  display: block;
+  padding: 40px 0;
+  text-align: center;
+  clip-path: circle(25px at calc(100% - 55px) calc(0% + 50px));
+  transition: all 0.3s ease;
+}
+.navbar.sticky .menu-list{
+  clip-path: circle(25px at calc(100% - 55px) calc(0% + 35px));
+}
+.navbar .menu-list.active{
+  clip-path: circle(75%);
+}
+.navbar .menu-list li{
+  margin-top: 45px;
+}
+.navbar .menu-list li a{
+  font-size: 23px;
+}
+}
+
+.about{
+background-color: black;
+}
+.logo a:hover{
+color: #ff9900;
+}
+.heading{
+background-color: rgb(77, 76, 76);
+}
+.vsCode{
+background-color: #222;
+border: #888;
+color: #f1f1f1;
+padding: 50px;
+text-align: center;
+}
+  </style>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo"><a href="#">NIVARAN</a></div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="/">Home</a></li>
+        <li><a href="appd">Back</a></li>
+        <li><a href="Chat">Chat</a></li>
+         <!-- <li><a href="./content">class 9-10</a></li> -->
+        
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+  <div class="banner"></div>
+<div class="heading"><center><h1>Flutter</h1></center></div>
+ 
+  <div class="vsCode">
+  <p>
+    <b>Step 1: </b> Navigate to flutter.dev on your webpage. On the top menu bar, select Docs > Get Started > Install > Windows. <br>
+    </p><br>
+    <img src="https://i.postimg.cc/x1KKWHcZ/flut1.png" style="height: 40%; width: 40%;"><br>
+    <img src="https://i.postimg.cc/y8vmTRWC/flut2.png" style="height: 40%; width: 40%;"><br>
+    <p> <b>Step 2: </b>  Check for the System Requirements. Henceforth, you can begin the installation.<br>
+    </p><br>
+     <img src="https://i.postimg.cc/65VgtMbV/flut3.png" style="height: 40%; width: 40%;"><br>
+     <p>You can get a detailed procedure for installing the latest versions of Windows PowerShell 5.0 and Git for Windows, if not already installed.</p><br>
+     <p><b>Step 3: </b>  Restart the system after installing Git on your windows. Once done, let’s get to the installation of Flutter Software development Kit (Flutter SDK).  <br>
+      Click on the download link for the latest version (as of today).</p><br>
+     <img src="https://i.postimg.cc/nhP6PCwN/flut4.png"style="height: 40%; width: 40%;"><br>
+     <p>Flutter SDK is the tool that not only allows us to create flutter projects but also build those<br>
+      projects and transform them into native mobile applications. In simpler words, Flutter SDK is the<br>
+      core tool for building a flutter UI.</p><br>
+      <p>Once the zip file is downloaded, extract the ‘flutter’ folder (drag and drop) to any path/directory<br>
+        of the system where you get the read and write access. Typically, it is better to create a new<br>
+        folder in a separate directory apart from the system drive due to permission issues (In my case, <br>
+        the target destination is D: > development > flutter).</p><br>
+        <img src="https://i.postimg.cc/63kHrZqf/flut5.png"><br>
+        <p>Now double-click on the ‘flutter’ folder. Go to ‘flutter_console.bat’ file and double-click to open<br>
+          a command prompt window. It should look something like this:</p><br>
+          <img src="https://i.postimg.cc/kXfpZBpq/flut6.png"style="height: 40%; width: 40%;"><br> 
+          <p>This console is actually a Windows terminal available for the developer to run flutter commands.<br>
+            Type in ‘flutter’ to get a list of all the flutter commands that can be run.</p><br>
+            <img src="https://i.postimg.cc/Y9jd5Hh0/flut7.png"style="height: 10%; width: 10%;"><br>
+            <p>Whilst it is pretty good to have a terminal to execute flutter commands and create projects, it’d still be better <br>
+              and more convenient to store all our flutter projects somewhere else on our system for easy access.<br>
+              Let us steer over to the next step of our journey!</p><br>
+     <p><b>Step 4:</b>   Check and edit environment variables for global system access. For this, scroll down to ‘Update your path’ on theofficial Docs page of the flutter installation page.<br>
+      For this, go to Control Panel > System and Security > System > Advanced System Settings > Environment Variables… .<br>
+      A dialog box displaying a list of the available environment variables appears on your screen.</p><br>
+     <img src="https://i.postimg.cc/zvkZBNFN/flut9.png"style="height: 40%; width: 40%;"><br>
+    <p>Environment Variables are global system variables present at the root level, which aids in configuring various aspects of Windows.<br>
+      We will now add the flutter tool as an environment variable for direct access (instead of running the .bat executable),<br>
+      and unlock it on the entire PowerShell and Command Prompt of your system.</p><br>
+      <p>To do this, glance through the following steps:</p><br>
+      <ol>
+        <li>Check for ‘Path’ variable under User Variables list. If not already present, create a new variable (‘New…’) and<br>
+          assign the ‘flutter\bin‘ directory as its value.</li>
+        <li>Now double-click on the ‘Path’ variable and add a new entry by double-clicking on a column below. <br>
+          It should look something like this:
+        </li>
+      </ol><br>
+      <img src="https://i.postimg.cc/7Z1ktg2h/flut10.png"style="height: 40%; width: 40%;"><br>
+      <ol><li>In the path, copy the entire directory of flutter\bin folder and paste it. Click ‘Ok’ twice to complete the setup. <br>
+        Now, make sure that you have closed any existing Command Prompt/Windows PowerShell windows that are open.</li></ol><br>
+        <p>Now, check whether your flutter framework can be accessed globally. To do this, open any terminal (say Command Prompt) and <br>
+          type in ‘flutter‘ and see whether you get the same list of commands as you did get earlier from the .bat terminal.<br>
+          If yes, you have successfully completed setting up flutter on the root level in your system.<br>
+        <i>If not, you might as well consider re-running the setup again.</i></p><br>
+        <img src="https://i.postimg.cc/3NPPwwPd/flut11.png"style="height: 40%; width: 40%;"><br>
+     <p><b>Step 5:</b>   Now, you have to analyze and check whether something is missing/has to be installed further. <br>
+      To do this, under the Command Prompt terminal, type in ‘Flutter Doctor‘ to check for other requirements.<br>
+    </p><br>
+
+     <img src="https://i.postimg.cc/dVPcwcNN/flut13.png"style="height: 40%; width: 40%;"><br>
+     <p><i>(Since a version has already been installed on my computer, below is an image shown from a previous version, to help you get</i> <br>
+     <i> an understanding of the ‘errors’ that appear after flutter doctor analysis.)</i></p><br>
+
+     <img src="https://i.postimg.cc/25LH61q4/flut12.png"style="height: 40%; width: 40%;"><br>
+     <p>According to the flutter doctor check, we see that flutter was installed successfully in our system, but the Android tools are missing,<br>
+      and so is Android Studio. We also see that there are no connected devices too. Eventually, the next step is about setting up Android tools on your device,<br>
+      to execute the flutter apps built by you.</p><br>
+    <p> <b>Step 6:</b>  Setting up Android tools and emulator for android devices.</p><br>
+    <p>The first step is to download and install Android Studio. To do this, navigate to the official page of Android Studio and click on ‘Download Android Studio‘.</p><br>
+   
+    <img src="https://i.postimg.cc/RC2wSg7b/flut14.png"style="height: 40%; width: 40%;"><br>
+    <p>After accepting the license agreements, you are good to go! Click on the final Download button to start downloading.</p><br>
+    <img src="https://i.postimg.cc/9M7FJYDr/flut15.png"style="height: 40%; width: 40%;"><br>
+    <p>After the download is complete, let’s move on to the next step, i.e. installation. </p><br>
+    <p>Under ‘Components‘, make sure that both Android Studio and Android Virtual Device are checked, and only then proceed. The Android Virtual Device<br>
+      is an essential tool for running various types and sizes of android emulators to test your flutter project. Henceforth, click on ‘Next‘.</p><br>
+
+      <img src="https://i.postimg.cc/k5NT8kc4/1.png"style="height: 40%; width: 40%;"><br>
+      <p>Select the directory you would want your file to be installed in. It is recommended to select some other path apart from the system drive. Once done, click on ‘Next‘.</p><br>
+      <img src="https://i.postimg.cc/s1FWT2fR/2.png"style="height: 40%; width: 40%;"><br>
+      <p>Finally, click on ‘Install‘. Wait for a couple of seconds for the installation to complete. Check the box beside ‘Launch Android Studio‘. Click on ‘Finish‘.</p><br>
+      <p>Wait for Android Studio to launch on your computer. On the home screen, click Next > Custom > Next.</p><br>
+     
+        <img src="https://i.postimg.cc/rwRV899g/3.png"style="height: 40%; width: 40%;" ><br>
+        <img src=" https://i.postimg.cc/vHV2bPK0/4.png"style="height: 40%; width: 40%;" ><br>
+        <p>For the Java Development kit location in the next step, it is recommended to keep the default path it requires, to avoid the hassle. In the next step,<br>
+          choose the UI appearance you’d like for Android Studio. Click ‘Next‘.<br>
+        </p>
+        <p>This next step is a bit important. Remember to check the required boxes exactly as shown below. If kits have already been installed, you can ignore those and move on.<br>
+          Click ‘Next‘. Set your desired folder for Android SDK.<br></p>
+          <img src=" https://i.postimg.cc/rscTBcvx/6.png"style="height: 40%; width: 40%;" ><br>
+          <p>With that done, click on ‘Finish‘. Android Studio will now install all the necessary android tools required for the execution of your flutter projects. <br>
+            This may take a significant time – it’s better to wait!</p><br>
+           
+            <img src="https://i.postimg.cc/cLtzB2zS/7.png"style="height: 40%; width: 40%;" ><br>
+            <p>Now, we are ready to create and build flutter projects on Android Studio and run it on a real or a virtual Android device (emulator).</p>
+    <p> <b>Step 7:</b> Set SDK as an environment variable, for global access.</p><br>
+
+     <p>Now, open Command Prompt terminal and run ‘flutter doctor’ again. If you have installed Android SDK in the default directory suggested by Android Studio, <br>
+      there wouldn’t be any problem that would appear. Nevertheless, if you have installed it in a non-default directory,<br>
+      flutter would not be able to detect it in your system. To help it able to do that, you guessed it…we would be<br>
+      assigning it as an environment variable, giving global access.</p><br>
+     <p>As discussed earlier in Step 4, go to environment variables and click ‘New‘, and do the following (as recommended by flutter doctor). Click ‘OK‘.</p><br>
+      <img src="https://i.postimg.cc/g2Y2Qyvr/flut17.png"style="height: 40%; width: 40%;"><br>
+
+     <p> <b>Step 8:</b>  Accept required Android Licenses.
+
+      On the Command Prompt terminal, type in:</p><br>
+
+     <p> <b>flutter doctor --android-licenses</b></p><br>
+     <p>as suggested by flutter doctor. Hit Enter. To review licenses, type ‘y‘ for Yes. </p><br>
+     <p>You’ll see a couple of repeated prompts that look like this:</p><br>
+     <p><b>Accept? (y/N):</b></p>
+     <p>Type ‘y‘ whenever asked for.</p><br>
+     <p>Finally, after all the license agreements have been accepted, you should see a message that looks something like this:</p><br>
+     <p><b>All SDK package licenses accepted</b></p>
+     <p> <b>Step 7:</b> Setup Android Emulator.<br>
+      You have the option to choose between an Android Device or an Android Emulator to build your application on. It depends totally on you.</p><br>
+     <p>For setting up Android Device, go through the official docs page and follow the exact steps as mentioned. Download The Google USB Driver by following the link <br>
+      and install according to the instructions given. This can also be installed through Android Studio, <br>
+      which you can later connect to a real Android Device to build the application.</p><br>
+     <img src="https://i.postimg.cc/bv0hfgt4/flut18.png"style="height: 40%; width: 40%;"><br>
+     <p>For setting up Android Emulator, you need to go through the following steps:</p>
+     <p><ul>
+      <li>Open <b>Android Studio.</b></li>
+      <li>On the topmost menu bar, click on <b>Tools > SDK Manager</b>.</li>
+      <li>Verify whether you have the latest SDK installed. Remember to install the latest stable version too by checking on the box to the left. <br>
+        <i>In my case, it is ‘Android 9.0 (Pie)‘. You can even uncheck the latest version (if not stable), to not only save space but also run all</i><br>
+        <i>your applications on the stable version itself.</i></li>
+        <li>Under the ‘SDK Tools‘ tab, don’t forget to check Google USB Driver to later connect a real Android Device.<br>
+          With that, click ‘Apply‘. Click ‘OK‘ to start SDK installation.<br>
+          This might take a couple of minutes to complete. After the setup is done, click on ‘Finish‘. Your setup is now complete!</li>
+          <li>To have a first look at your Android Emulator, open Android Studio. Go to Tools > AVD Manager. A dialog box appears.</li>
+     </ul></p><br>
+     <img src="https://i.postimg.cc/B6YZRNW4/flut19.png"style="height: 40%; width: 40%;"><br>
+     <p><ul>
+      <li>Click on ‘Create Virtual Device…‘, select a device and its dimensions according to your preference, select a system image and lastly,<br>
+        under all default settings, click on ‘Finish’. Click on the ‘▶’ button to fire up your emulator. </li>
+
+     </ul></p><br>
+     <img src="https://i.postimg.cc/vm8cj417/flut20.png"style="height: 40%; width: 40%;"><br>
+      <b>There you go! You now have a fully functional flutter framework with devices/emulators to build your beautiful apps on. Go crazy! 😎😎<br></b>
+      <h1>VIDEO</h1>
+      
+      <iframe width="660" height="415" src="https://www.youtube.com/embed/fDnqXmLSqtg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+         
+<!-- ------------------------------------------------------------JAVA Script------------------------------------------------------------ -->
+  
+      <script>
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menu = document.querySelector(".menu-list");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = ()=>{
+          menu.classList.add("active");
+          menuBtn.classList.add("hide");
+          cancelBtn.classList.add("show");
+          body.classList.add("disabledScroll");
+        }
+        cancelBtn.onclick = ()=>{
+          menu.classList.remove("active");
+          menuBtn.classList.remove("hide");
+          cancelBtn.classList.remove("show");
+          body.classList.remove("disabledScroll");
+        }
+    
+        window.onscroll = ()=>{
+          this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+      </script>
+    </body>
+
+
+
+
+
